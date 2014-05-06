@@ -1,0 +1,18 @@
+<template name="websitesList">
+  <div class="websites">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Address</th>
+          <th>Options</th>
+          <th>View</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each websites}}
+          {{> websiteItem}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</template>
