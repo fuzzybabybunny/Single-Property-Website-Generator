@@ -1,9 +1,11 @@
-Template.websiteSubmit.events({
+Template.websiteEdit.events({
 
   'submit form': function(e) {
     e.preventDefault();
 
-    var website = {
+    var currentWebsiteId = this._id;
+
+    var websiteProperties = {
       address1: $(e.target).find('[name=address1]').val(),
       address2: $(e.target).find('[name=address2]').val(),
       city: $(e.target).find('[name=city]').val(),
@@ -14,8 +16,14 @@ Template.websiteSubmit.events({
       created: new Date()
     }
 
-    website._id = Websites.insert(website);
-    Router.go('websitePage', website);
+    Websites.update(currentWebsiteId, {$set: websiteProperties}, function(error) {
+      if (error) {
+      // display the error to the user
+      alert(error.reason);
+      } else {
+        Router.go('websitePage', {_id: currentWebsiteId});
+      }
+    });
 
   }
 

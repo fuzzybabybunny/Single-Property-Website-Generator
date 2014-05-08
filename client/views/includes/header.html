@@ -1,9 +1,20 @@
 <template name="header">
-
   <header class="navbar">
     <div class="navbar-inner">
-      <a class="brand" href="/">Single Property Website Generator</a>
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collap
+      se">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      {{#if currentUser}}
+<!--       <a class="brand" href="{{pathFor 'websitesList'}}">Single Property Website Generator</a> -->
+      <div class="nav-collapse">
+        <ul class="nav pull-right">
+          {{> loginButtons}}
+        </ul>
+      </div>
+      {{/if}}
     </div>
   </header>
-
 </template>

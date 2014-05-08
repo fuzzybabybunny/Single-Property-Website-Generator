@@ -5,9 +5,10 @@
 
 standard-app-packages
 insecure
-bootstrap
 coffeescript
 iron-router
 accounts-base
 accounts-facebook
-accounts-ui-unstyled
+bootstrap-3
+accounts-password
+accounts-ui-bootstrap-3

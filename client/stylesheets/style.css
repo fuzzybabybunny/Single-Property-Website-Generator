@@ -9,7 +9,7 @@ html {
 
 /* line 13, ../sass/typica-login.scss */
 body {
-  background: url(/background/bg1.png) no-repeat center center fixed;
+  /*background: url(/background/bg1.png) no-repeat center center fixed;*/
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -89,6 +89,28 @@ body {
 /* $LOGIN  */
 /* ####### */
 /* line 80, ../sass/typica-login.scss */
+
+#login-screen .dropdown-menu {
+  display: block;
+  position: relative;
+  height: 245px;
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+#login-screen #login-dropdown-list {
+  display: block;
+}
+
+#login-screen a.dropdown-toggle {
+  display: none;
+}
+
+li#login-buttons.login-buttons-dropdown-align {
+  display: inline;
+}
+
 #login-wrapper {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -269,6 +291,7 @@ footer.white {
   font-size: 20px;
   color: #333333;
   font-weight: 300;
+  display: block;
 }
 
 /* register form */
