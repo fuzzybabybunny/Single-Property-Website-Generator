@@ -8,7 +8,7 @@ insecure
 coffeescript
 iron-router
 accounts-base
+accounts-password
 accounts-facebook
 bootstrap-3
-accounts-password
 accounts-ui-bootstrap-3
