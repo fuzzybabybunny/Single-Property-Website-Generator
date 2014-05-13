@@ -6,7 +6,7 @@ Meteor.methods({
     var user = Meteor.user();
 
     var website = _.extend(_.pick(websiteAttributes, 'address1',
-      'address2', 'city', 'state', 'zip', 'title', 'description'), {
+      'address2', 'city', 'state', 'zip', 'title', 'description', 'template', 'url'), {
       userId: user._id,
       owner: user.username,
       created: new Date()

@@ -6,6 +6,8 @@ if (Websites.find().count() === 0) {
     state: 'CA',
     zip: '94404',
     owner: 'admin',
+    template: '1',
+    url: 'http://localhost:4000/_id',
     created: new Date()
   });
   Websites.insert({
@@ -15,6 +17,8 @@ if (Websites.find().count() === 0) {
     state: 'CA',
     zip: '94404',
     owner: 'admin',
+    template: '1',
+    url: 'http://localhost:4000/_id',
     created: new Date()
   });
   Websites.insert({
@@ -24,6 +28,8 @@ if (Websites.find().count() === 0) {
     state: 'CA',
     zip: '94231',
     owner: 'admin',
+    template: '1',
+    url: 'http://localhost:4000/_id',
     created: new Date()
   });
 }

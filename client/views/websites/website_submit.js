@@ -1,3 +1,4 @@
+
 Template.websiteSubmit.events({
 
   'submit form': function(e) {
@@ -11,12 +12,46 @@ Template.websiteSubmit.events({
       zip: $(e.target).find('[name=zip]').val(),
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
-      created: new Date()
+      created: new Date(),
+      template: $(e.target).find('[name=template]').val()
     }
 
-    website._id = Websites.insert(website);
-    Router.go('websitePage', website);
+    website._id = Websites.insert(website, function(error) {
+      if (error) {
+        // display the error to the user
+        alert(error.reason);
+      } else {
 
+        var template = $(e.target).find('[name=template]').val();
+        var url = "";
+
+        if ( template == "0" ) {
+          url = "http://localhost:4000/" + website._id;
+        } else if ( template == "1" ) {
+          url = "http://localhost:4001/" + website._id;
+        } else if ( template == "2" ) {
+          url = "http://localhost:4002/" + website._id;
+        } else if ( template == "3" ) {
+          url = "http://localhost:4003/" + website._id;
+        }
+
+        Websites.update( website._id,
+          {
+            $set: {
+              'url': url
+            }
+          },
+
+          function(error) {
+            if (error) {
+            // display the error to the user
+            alert(error.reason);
+            } else {
+              Router.go('websitePage', {_id: website._id });
+            }
+          }
+        );
+      }
+    });
   }
-
 });

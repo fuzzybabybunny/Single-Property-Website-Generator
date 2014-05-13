@@ -1,0 +1,41 @@
+<template name="userEdit">
+  <div id="login-wrapper">
+    <form id="login-form" action="action" class="form login-form">
+      <div class="control-group">
+        <div class="controls">
+          <input name="first_name" type="text" value="{{currentUser.profile.first_name}}" placeholder="First Name"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input name="last_name" type="text" value="{{currentUser.profile.last_name}}" placeholder="Last Name"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input name="cell_phone" type="text" value="{{currentUser.profile.cell_phone}}" placeholder="Mobile Number"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input name="email" type="text" value="{{currentUser.profile.email}}" placeholder="Email"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input name="business_name" type="text" value="{{currentUser.profile.business_name}}" placeholder="Business Name"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input name="website" type="text" value="{{currentUser.profile.website}}" placeholder="Website"/>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input type="submit" value="Submit" id="submit-website-button" class="btn btn-primary"/>
+        </div>
+      </div>
+    </form>
+  </div>
+</template>
