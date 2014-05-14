@@ -1,11 +1,10 @@
+
 Template.websiteEdit.events({
 
   'submit form': function(e) {
     e.preventDefault();
 
-    var currentWebsiteId = this._id;
-
-    var websiteProperties = {
+    var website = {
       address1: $(e.target).find('[name=address1]').val(),
       address2: $(e.target).find('[name=address2]').val(),
       city: $(e.target).find('[name=city]').val(),
@@ -13,18 +12,46 @@ Template.websiteEdit.events({
       zip: $(e.target).find('[name=zip]').val(),
       title: $(e.target).find('[name=title]').val(),
       description: $(e.target).find('[name=description]').val(),
-      created: new Date()
+      created: new Date(),
+      template: $(e.target).find('[name=template]').val()
     }
 
-    Websites.update(currentWebsiteId, {$set: websiteProperties}, function(error) {
+    website._id = Websites.insert(website, function(error) {
       if (error) {
-      // display the error to the user
-      alert(error.reason);
+        // display the error to the user
+        alert(error.reason);
       } else {
-        Router.go('websitePage', {_id: currentWebsiteId});
+
+        var template = $(e.target).find('[name=template]').val();
+        var url = "";
+
+        if ( template == "0" ) {
+          url = "http://localhost:4000/" + website._id;
+        } else if ( template == "1" ) {
+          url = "http://localhost:4001/" + website._id;
+        } else if ( template == "2" ) {
+          url = "http://localhost:4002/" + website._id;
+        } else if ( template == "3" ) {
+          url = "http://localhost:4003/" + website._id;
+        }
+
+        Websites.update( website._id,
+          {
+            $set: {
+              'url': url
+            }
+          },
+
+          function(error) {
+            if (error) {
+            // display the error to the user
+            alert(error.reason);
+            } else {
+              Router.go('websitePage', {_id: website._id });
+            }
+          }
+        );
       }
     });
-
   }
-
 });

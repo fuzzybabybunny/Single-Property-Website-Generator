@@ -3,7 +3,7 @@
     <form id="login-form" action="action" class="form login-form">
       <div class="control-group">
         <div class="controls">
-          <input name="address1" type="text" value="{{address1}}" placeholder="Address 1"/>
+          <input name="address1" type="text" value="{{address1}}" placeholder="Address 1" onchange="Websites.update(this._id, {$set: { address1: $(e.target).find('[name=address1]').val() } })"/>
         </div>
       </div>
       <div class="control-group">
@@ -40,6 +40,11 @@
         <label class="control-label" for="description">Description</label>
         <div class="controls">
           <textarea name="description" type="text" value="{{description}}"></textarea>
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input name="template" type="text" value="{{template}}" placeholder="Template Number"/>
         </div>
       </div>
       <div class="control-group">

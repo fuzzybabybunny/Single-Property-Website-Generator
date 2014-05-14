@@ -20,7 +20,7 @@ Template.userEdit.events({
         // display the error to the user
         alert(error.reason);
         } else {
-          Router.go('userPage', {_id: Meteor.userId() });
+          Router.go('websitesList');
         }
       }
     );

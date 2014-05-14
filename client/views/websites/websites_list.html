@@ -1,9 +1,7 @@
 <template name="websitesList">
   <div class="create-website">
     <a type="button" href="{{pathFor 'websiteSubmit'}}" id="create-website-button" class="btn btn-primary">Create a New Website</a>
-    <a type="button" href="{{pathFor 'merlinTemplate'}}" id="create-website-button" class="btn btn-primary">Merlin Master</a>
-    <a type="button" href="http://localhost:4000" class="btn btn-primary">Merlin Master</a>
-    <a type="button" href="/user/{{currentUser._id}}" class="btn btn-primary">My Profile</a>
+    <a type="button" href="/user/{{currentUser._id}}/edit" class="btn btn-primary">My Profile</a>
   </div>
   <div class="websites">
     <table class="table table-striped">
