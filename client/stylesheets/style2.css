@@ -1,4 +1,4 @@
-
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 
 #login-screen .dropdown-menu {
   display: block;
@@ -36,7 +36,6 @@ li#login-buttons.login-buttons-dropdown-align {
   width: 100% !important;
 }
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 body
 {
     font-family: 'Lato', 'sans-serif';
@@ -118,6 +117,28 @@ span.tags
 #login-dropdown {
   padding-top: 5px;
 }
+
 .well {
-    background-color: #242424 !important;
+  background-color: #242424 !important;
+}
+td.property-address-table {
+  text-align: left;
+}
+a.glyphicon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#edit-website-form input {
+  color: black;
+  width: 200px;
+}
+
+#edit-website-form textarea {
+  color: black;
+  width: 200px;
+}
+
+.modal-title {
+  color: black;
 }

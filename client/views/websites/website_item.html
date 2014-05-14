@@ -1,13 +1,81 @@
 <template name="websiteItem">
-<h1>{{title}}</h1>
   <tr class="website">
-    <td>{{address1}}, {{address2}}, {{city}}, {{state}}, {{zip}}, {{url}}</td>
+    <td class="property-address-table">{{address1}}, {{address2}}, {{city}}, {{state}}, {{zip}}, {{website_title}}, {{description}}, {{url}}</td>
     <td>
-      <a class="glyphicon glyphicon-pencil" href="{{pathFor 'websiteEdit'}}"></a>
+      <a class="glyphicon glyphicon-pencil" href="#" data-toggle="modal" data-target="#edit-website-modal"></a>
+<!--       <a class="glyphicon glyphicon-pencil" href="{{pathFor 'websiteEdit'}}"></a> -->
       <a class="glyphicon glyphicon-trash" href="#"></a>
     </td>
     <td>
-      <a class="glyphicon glyphicon-eye-open" href="{{pathFor 'websitePage'}}"></a>
+      <a class="glyphicon glyphicon-eye-open" href="{{url}}" target="_blank"></a>
     </td>
   </tr>
+
+  <div class="modal fade" id="edit-website-modal" tabindex="-1" role="dialog" aria-labelledby="edit-website-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+          <h4 class="modal-title" id="edit-website-modal-label">Edit a Website</h4>
+        </div>
+        <form id="edit-website-form" action="action" class="form login-form">
+          <div class="modal-body">
+              <div class="input-group">
+                <div class="controls">
+                  <input name="address1" type="text" value="{{address1}}" placeholder="Address 1"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="address2" type="text" value="{{address2}}" placeholder="Address 2"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="city" type="text" value="{{city}}" placeholder="City"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="state" type="text" value="{{state}}" placeholder="State"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="zip" type="text" value="{{zip}}" placeholder="Zip Code"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="title" type="text" value="{{website_title}}" placeholder="Title"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="id" type="hidden" value="{{id}}"/>
+                </div>
+              </div>
+              <div class="input-group">
+                <label class="control-label" for="description">Description</label>
+                <div class="controls">
+                  <textarea name="description">{{description}}</textarea>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="controls">
+                  <input name="template" type="text" value="{{template}}" placeholder="Template Number (0-3)"/>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <input type="submit" value="Submit" id="submit-edit-website" class="btn btn-primary"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </template>
+
