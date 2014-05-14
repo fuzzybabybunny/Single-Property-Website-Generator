@@ -1,22 +1,34 @@
 <template name="websitesList">
-  <div class="create-website">
-    <a type="button" href="{{pathFor 'websiteSubmit'}}" id="create-website-button" class="btn btn-primary">Create a New Website</a>
-    <a type="button" href="/user/{{currentUser._id}}/edit" class="btn btn-primary">My Profile</a>
-  </div>
-  <div class="websites">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Address</th>
-          <th>Options</th>
-          <th>View</th>
-        </tr>
-      </thead>
-      <tbody>
-        {{#each websites}}
-          {{> websiteItem}}
-        {{/each}}
-      </tbody>
-    </table>
-  </div>
+    <section class="intro">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+              <div class="well">
+                <div class="create-website">
+                  <a type="button" href="{{pathFor 'websiteSubmit'}}" id="create-website-button" class="btn btn-primary">Create a New Website</a>
+                </div>
+                <div class="websites">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>Address</th>
+                        <th>Options</th>
+                        <th>View</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {{#each websites}}
+                        {{> websiteItem}}
+                      {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 </template>
+
