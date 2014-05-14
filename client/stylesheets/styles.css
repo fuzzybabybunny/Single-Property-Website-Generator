@@ -90,7 +90,6 @@ span.tags
     box-shadow: none;
     -webkit-box-shadow: none;
     width: 250px;
-    margin-left: -125px;
     }
 .dropdown-menu .divider
 {
@@ -116,6 +115,9 @@ span.tags
     margin-left: -10px;
     z-index: 10;
     }
+#login-dropdown {
+  padding-top: 5px;
+}
 .well {
     background-color: #242424 !important;
 }
