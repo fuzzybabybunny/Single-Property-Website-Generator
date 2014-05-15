@@ -131,14 +131,16 @@ a.glyphicon {
 
 #edit-website-form input {
   color: black;
-  width: 200px;
 }
 
 #edit-website-form textarea {
   color: black;
-  width: 200px;
 }
 
 .modal-title {
+  color: black;
+}
+
+.radio {
   color: black;
 }

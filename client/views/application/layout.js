@@ -4,7 +4,7 @@ Template.layout.created = function() {
   $('head').append('<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>');
   // $('head').append('<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>');
 
-  $.getScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false', function() {
-    $('head').append('<script src="assets/js/grayscale.js"></script>');
-  })
-}
+  $.getScript('js/grayscale.js');
+  $.getScript('js/jquery.easing.min.js');
+  $.getScript('js/bootstrap.js');
+  }

@@ -1,5 +1,5 @@
 <template name="websitesList">
-    <section class="intro">
+    <section id="websites" class="intro">
       <div class="intro-body">
         <div class="container">
           <div class="row">
@@ -40,52 +40,52 @@
         </div>
         <form id="add-website-form" action="action" class="form login-form">
           <div class="modal-body">
-              <div class="input-group">
-                <div class="controls">
-                  <input name="address1" type="text" value="" placeholder="Address 1"/>
-                </div>
+            <div class="col-md-12">
+              <input class="form-control" name="address1" type="text" value="" placeholder="Address 1"/>
+              <input class="form-control" name="address2" type="text" value="" placeholder="Address 2"/>
+              <input class="form-control" name="city" type="text" value="" placeholder="City"/>
+              <input class="form-control" name="state" type="text" value="" placeholder="State"/>
+              <input class="form-control" name="zip" type="text" value="" placeholder="Zip Code"/>
+              <input class="form-control" name="title" type="text" value="" placeholder="Title"/>
+              <textarea class="form-control" rows="4" name="description" type="text" value="" placeholder="Description" ></textarea>
+              <input class="form-control" name="sqft" type="text" value="" placeholder="Square Footage"/>
+              <input class="form-control" name="beds" type="text" value="" placeholder="Number of Beds"/>
+              <input class="form-control" name="baths" type="text" value="" placeholder="Number of Baths"/>
+              <input class="form-control" name="lot" type="text" value="" placeholder="Lot Size"/>
+              <input class="form-control" name="video" type="text" value="" placeholder="Video Link"/>
+              <input class="form-control" name="user_id" type="hidden" value="{{currentUser._id}}"/>
+              <label class="modal-title">
+                Pick a Template
+              </label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="1" checked>
+                  Merlin
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="address2" type="text" value="" placeholder="Address 2"/>
-                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="2">
+                  Amoeba
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="city" type="text" value="" placeholder="City"/>
-                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="3">
+                  Shield
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="state" type="text" value="" placeholder="State"/>
-                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="4">
+                  Progressus
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="zip" type="text" value="" placeholder="Zip Code"/>
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="title" type="text" value="" placeholder="Title"/>
-                </div>
-              </div>
-              <div class="input-group">
-                <label class="control-label" for="description">Description</label>
-                <div class="controls">
-                  <textarea name="description" type="text" value=""></textarea>
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="template" type="text" value="" placeholder="Template Number (0-3)"/>
-                </div>
-              </div>
-
+            </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <input type="submit" value="Submit" id="submit-new-website" class="btn btn-primary"/>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" value="Submit" id="submit-new-website" class="btn btn-primary"/>
           </div>
         </form>
       </div>

@@ -1,6 +1,6 @@
 <template name="websiteItem">
   <tr class="website">
-    <td class="property-address-table">{{address1}}, {{address2}}, {{city}}, {{state}}, {{zip}}, {{website_title}}, {{description}}, {{url}}</td>
+    <td class="property-address-table">{{address1}}, {{address2}}, {{city}}, {{state}}, {{zip}}</td>
     <td>
       <a class="glyphicon glyphicon-pencil" href="#" data-toggle="modal" data-target="#edit-website-modal"></a>
 <!--       <a class="glyphicon glyphicon-pencil" href="{{pathFor 'websiteEdit'}}"></a> -->
@@ -20,53 +20,48 @@
         </div>
         <form id="edit-website-form" action="action" class="form login-form">
           <div class="modal-body">
-              <div class="input-group">
-                <div class="controls">
-                  <input name="address1" type="text" value="{{address1}}" placeholder="Address 1"/>
-                </div>
+            <div class="col-md-12">
+              <input class="form-control" name="address1" type="text" value="{{address1}}" placeholder="Address 1"/>
+              <input class="form-control" name="address2" type="text" value="{{address2}}" placeholder="Address 2"/>
+              <input class="form-control" name="city" type="text" value="{{city}}" placeholder="City"/>
+              <input class="form-control" name="state" type="text" value="{{state}}" placeholder="State"/>
+              <input class="form-control" name="zip" type="text" value="{{zip}}" placeholder="Zip Code"/>
+              <input class="form-control" name="title" type="text" value="{{website_title}}" placeholder="Title"/>
+              <textarea class="form-control" rows="4" name="description" type="text" placeholder="Description" >{{description}}</textarea>
+              <input class="form-control" name="sqft" type="text" value="{{sqft}}" placeholder="Square Footage"/>
+              <input class="form-control" name="beds" type="text" value="{{beds}}" placeholder="Number of Beds"/>
+              <input class="form-control" name="baths" type="text" value="{{baths}}" placeholder="Number of Baths"/>
+              <input class="form-control" name="lot" type="text" value="{{lot}}" placeholder="Lot Size"/>
+              <input class="form-control" name="video" type="text" value="{{video}}" placeholder="Video Link"/>
+              <input class="form-control" name="user_id" type="hidden" value="{{currentUser._id}}"/>
+              <label class="modal-title">
+                Pick a Template
+              </label>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="1" checked>
+                  Merlin
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="address2" type="text" value="{{address2}}" placeholder="Address 2"/>
-                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="2">
+                  Amoeba
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="city" type="text" value="{{city}}" placeholder="City"/>
-                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="3">
+                  Shield
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="state" type="text" value="{{state}}" placeholder="State"/>
-                </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" name="template" id="template" value="4">
+                  Progressus
+                </label>
               </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="zip" type="text" value="{{zip}}" placeholder="Zip Code"/>
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="title" type="text" value="{{website_title}}" placeholder="Title"/>
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="id" type="hidden" value="{{id}}"/>
-                </div>
-              </div>
-              <div class="input-group">
-                <label class="control-label" for="description">Description</label>
-                <div class="controls">
-                  <textarea name="description">{{description}}</textarea>
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="controls">
-                  <input name="template" type="text" value="{{template}}" placeholder="Template Number (0-3)"/>
-                </div>
-              </div>
-
+            </div>
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

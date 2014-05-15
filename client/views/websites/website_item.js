@@ -23,10 +23,16 @@ Template.websiteItem.events({
         city: $(e.target).find('[name=city]').val(),
         state: $(e.target).find('[name=state]').val(),
         zip: $(e.target).find('[name=zip]').val(),
+        sqft: $(e.target).find('[name=sqft]').val(),
+        beds: $(e.target).find('[name=beds]').val(),
+        baths: $(e.target).find('[name=baths]').val(),
+        lot: $(e.target).find('[name=lot]').val(),
         website_title: $(e.target).find('[name=title]').val(),
         description: $(e.target).find('[name=description]').val(),
+        created: new Date(),
         template: $(e.target).find('[name=template]').val(),
-        websiteId: $(e.target).find('[name=id]').val()
+        video: $(e.target).find('[name=video]').val(),
+        user_id: $(e.target).find('[name=user_id]').val()
       }
       console.log(currentWebsiteId);
       Websites.update(currentWebsiteId, {$set: website}, function(error) {
@@ -39,14 +45,14 @@ Template.websiteItem.events({
           var template = $(e.target).find('[name=template]').val();
           var url = "";
 
-          if ( template == "0" ) {
-            url = "http://localhost:4000/" + currentWebsiteId;
-          } else if ( template == "1" ) {
+          if ( template == "1" ) {
             url = "http://localhost:4001/" + currentWebsiteId;
           } else if ( template == "2" ) {
             url = "http://localhost:4002/" + currentWebsiteId;
           } else if ( template == "3" ) {
             url = "http://localhost:4003/" + currentWebsiteId;
+          } else if ( template == "4" ) {
+            url = "http://localhost:4004/" + currentWebsiteId;
           }
 
           console.log(url);

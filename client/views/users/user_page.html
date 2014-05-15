@@ -6,9 +6,10 @@
         <div class="well profile">
           <div class="col-sm-12">
             <div class="col-xs-12 col-sm-8">
-              <h2>{{currentUser.profile.first_name}}  {{currentUser.profile.last_name}}</h2>
-              <p><strong>About: </strong> Web Designer / UI. </p>
-              <p><strong>Hobbies: </strong> Read, out with friends, listen to music, draw and learn new things. </p>
+              <h2>{{currentUser.profile.first_name}}&nbsp;{{currentUser.profile.last_name}}</h2>
+              <p>{{currentUser.profile.business_name}}</p>
+              <p>{{currentUser.profile.cell_phone}}</p>
+              <p>{{currentUser.profile.website}}</p>
               <p><strong>Skills: </strong>
                 <span class="tags">html5</span>
                 <span class="tags">css3</span>
@@ -18,20 +19,20 @@
             </div>
             <div class="col-xs-12 col-sm-4 text-center">
               <figure>
-                <img src="http://www.localcrimenews.com/wp-content/uploads/2013/07/default-user-icon-profile.png" alt="" class="img-circle img-responsive">
+                <img src="{{currentUser.profile.photo}}" alt="" class="img-circle img-responsive">
                 <figcaption class="ratings">
-                  <p>Ratings
+                  <p>Your Rating
                   <a href="#">
                       <span class="fa fa-star"></span>
                   </a>
                   <a href="#">
-                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star-o"></span>
                   </a>
                   <a href="#">
-                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star-o"></span>
                   </a>
                   <a href="#">
-                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star-o"></span>
                   </a>
                   <a href="#">
                        <span class="fa fa-star-o"></span>
@@ -42,38 +43,46 @@
             </div>
           </div>
           <div class="col-xs-12 divider text-center">
-            <div class="col-xs-12 col-sm-4 emphasis">
-              <h2><strong> 20,7K </strong></h2>
-              <p><small>Followers</small></p>
-              <button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>
+            <div class="col-xs-12 col-sm-4 ">
             </div>
-            <div class="col-xs-12 col-sm-4 emphasis">
-              <h2><strong>245</strong></h2>
-              <p><small>Following</small></p>
-              <button class="btn btn-info btn-block"><span class="fa fa-user"></span> View Profile </button>
+            <div class="col-xs-12 col-sm-4 ">
             </div>
-            <div class="col-xs-12 col-sm-4 emphasis">
-              <h2><strong>43</strong></h2>
-              <p><small>Snippets</small></p>
-              <div class="btn-group dropup btn-block">
-                <button type="button" class="btn btn-primary"><span class="fa fa-gear"></span> Options </button>
-                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                  <span class="caret"></span>
-                  <span class="sr-only">Toggle Dropdown</span>
-                </button>
-                <ul class="dropdown-menu text-left" role="menu">
-                  <li><a href="#"><span class="fa fa-envelope pull-right"></span> Send an email </a></li>
-                  <li><a href="#"><span class="fa fa-list pull-right"></span> Add or remove from a list  </a></li>
-                  <li class="divider"></li>
-                  <li><a href="#"><span class="fa fa-warning pull-right"></span>Report this user for spam</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#" class="btn disabled" role="button"> Unfollow </a></li>
-                </ul>
-              </div>
+            <div class="col-xs-12 col-sm-4 ">
+              <button href="#" data-toggle="modal" data-target="#edit-profile-modal" id="edit-profile-button" class="btn btn-info btn-block"><span class="fa fa-user"></span> Edit Profile </button>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
+  <div class="modal fade" id="edit-profile-modal" tabindex="-1" role="dialog" aria-labelledby="edit-profile-modal" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+          <h4 class="modal-title" id="edit-website-modal-label">Edit Your Profile</h4>
+        </div>
+        <form id="edit-profile-form" action="action" class="form login-form">
+          <div class="modal-body">
+            <div class="col-md-12">
+              <input class="form-control" name="first_name" type="text" value="{{currentUser.profile.first_name}}" placeholder="First Name"/>
+              <input class="form-control" name="last_name" type="text" value="{{currentUser.profile.last_name}}" placeholder="Last Name"/>
+              <input class="form-control" name="cell_phone" type="text" value="{{currentUser.profile.cell_phone}}" placeholder="Mobile Number"/>
+              <input class="form-control" name="email" type="text" value="{{currentUser.profile.email}}" placeholder="Email"/>
+              <input class="form-control" name="business_name" type="text" value="{{currentUser.profile.business_name}}" placeholder="Business Name"/>
+              <input class="form-control" name="website" type="text" value="{{currentUser.profile.website}}" placeholder="Website"/>
+              <input class="form-control" name="photo" type="text" value="{{currentUser.profile.photo}}" placeholder="Link to Profile Photo"/>
+            </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <input type="submit" value="Submit" id="submit-edit-profile" class="btn btn-primary"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </template>
